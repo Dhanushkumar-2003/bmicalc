@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
 
 class Calculator {
-  Calculator({required this.height, required this.weight});
+  Calculator({
+    required this.height,
+    required this.weight,
+  });
   final int height;
   final int weight;
 
@@ -24,11 +26,11 @@ class Calculator {
 
   String value() {
     if (bmi >= 25) {
-      return 'your bmi result is very high, please take care your health';
+      return 'your bmi result is$bmi is very high, please take care your health';
     } else if (bmi > 18) {
-      return 'your bmi result is good,please maintain your health';
+      return 'your bmi result is $bmi is  good ,please maintain your health';
     } else {
-      return "your bmi result is quite low, eat good food";
+      return "your bmi result is $bmi is quite low, eat good food";
     }
   }
 }

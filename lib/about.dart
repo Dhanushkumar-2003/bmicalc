@@ -51,6 +51,7 @@ class _AboutState extends State<About> {
                   children: [
                     Expanded(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
                             height: 200,
@@ -59,17 +60,29 @@ class _AboutState extends State<About> {
                             decoration: BoxDecoration(
                                 color: Color(0xFF1D1E33),
                                 borderRadius: BorderRadius.circular(33)),
-                            child: GestureDetector(
-                              onTap: () {
-                                print("femll$male");
-                                setState(() {});
-                                male = !male;
-                              },
-                              child: Icon(FontAwesomeIcons.mars,
-                                  size: 70,
-                                  color: (male == true)
-                                      ? Colors.black
-                                      : Colors.white),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      male = true;
+                                      // male
+                                      print("MALE$male");
+                                    });
+                                  },
+                                  child: Icon(FontAwesomeIcons.mars,
+                                      size: 70,
+                                      // ignore: unnecessary_null_comparison
+                                      color: (male == true || male == null)
+                                          ? Colors.white
+                                          : Colors.black),
+                                ),
+                                Text(
+                                  "male",
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -83,20 +96,30 @@ class _AboutState extends State<About> {
                           margin: EdgeInsets.all(15),
                           height: 200,
                           width: 200,
-                          child: GestureDetector(
-                            onTap: () {
-                              print("msl$male");
-                              setState(() {
-                                male = !male;
-                                ;
-                              });
-                            },
-                            child: Icon(
-                              FontAwesomeIcons.venus,
-                              color:
-                                  (male == true) ? Colors.white : Colors.black,
-                              size: 60,
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    male = false;
+                                    // female...
+                                    print("female$male");
+                                  });
+                                },
+                                child: Icon(
+                                  FontAwesomeIcons.venus,
+                                  color: (male == false)
+                                      ? Colors.white
+                                      : Colors.black,
+                                  size: 60,
+                                ),
+                              ),
+                              Text(
+                                "female",
+                                style: TextStyle(color: Colors.white),
+                              )
+                            ],
                           )),
                     ),
                   ],
@@ -112,7 +135,10 @@ class _AboutState extends State<About> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        child: Text("HEIGHT"),
+                        child: Text(
+                          "HEIGHT",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                       Container(
                         child: Text(
@@ -152,7 +178,10 @@ class _AboutState extends State<About> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
-                            child: Text("AGE"),
+                            child: Text(
+                              "AGE",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                           Container(
                             child: Text(
@@ -205,7 +234,10 @@ class _AboutState extends State<About> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
-                            child: Text("WEIGHT"),
+                            child: Text(
+                              "WEIGHT",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                           Container(
                             child: Text(

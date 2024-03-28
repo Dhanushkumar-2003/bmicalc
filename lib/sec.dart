@@ -48,7 +48,7 @@ class Sec extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    calcbmi,
+                    calcbmi.toString(),
                     style: TextStyle(
                         fontSize: 80,
                         fontWeight: FontWeight.bold,
